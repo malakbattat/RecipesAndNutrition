@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie and Nutritional Value Calculator - Fats and Oils</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../../assets/css/calc-NVPages-style/styles.css">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/logo/Find_a_Recipe.png">
+
+    <style>
+        body {
+            background-image: url("../../assets/images/Calc-NVPages/fat/cooking-fat.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <span style="width: 100px; left: 0; top: 0; position: fixed; margin:20px; "> <a href="../../calculate.html"><button style=" background-color: rgb(81, 203, 13);">Back</button></a></span>
+        <h1>Calorie and Nutritional Value Calculator - Fats and Oils</h1>
+        <form id="nutrition-form">
+            <div class="form-group">
+                <label for="food-item">Select Food Item:</label>
+                <select id="food-item" required>
+                    <option value="">--Select--</option>
+                    <option value="lamb_fat">Lamb Fat</option>
+                    <option value="industrial_palm_kernel_oil">Industrial Palm Kernel Oil, Hydrogenated, Candy Fats</option>
+                    <option value="palm_oil">Palm Oil</option>
+                    <option value="walnut_oil">Walnut Oil</option>
+                    <option value="mustard_oil">Mustard Oil</option>
+                    <option value="corn_oil">Corn Oil, Industrial and Retail, All-purpose Salad and Cooking</option>
+                    <option value="olive_oil">Olive Oil, Salad or Cooking</option>
+                    <option value="oat_oil">Oat Oil</option>
+                    <option value="rice_bran_oil">Rice Bran Oil</option>
+                    <option value="almond_oil">Almond Oil</option>
+                    <option value="coconut_oil">Coconut Oil</option>
+                    <option value="cocoa_butter_oil">Cocoa Butter Oil</option>
+                    <option value="vegetable_ghee">Vegetable Ghee</option>
+                    <option value="regular_vegetable_ghee">Regular Vegetable Ghee, Solid, Hydrogenated Soybean</option>
+                    <option value="mayonnaise_tofu">Mayonnaise, Made from Tofu</option>
+                    <option value="chicken_fat">Chicken Fat</option>
+                    <option value="avocado_oil">Avocado Oil</option>
+                    <option value="hazelnut_oil">Hazelnut Oil</option>
+                    <option value="fish_oil_salmon">Fish Oil, From Salmon</option>
+                    <option value="mayonnaise_chol_free">Mayonnaise Sauce, Cholesterol-Free</option>
+                    <option value="mayonnaise_low_sodium">Mayonnaise Sauce, Low Sodium, Low Calorie or Diet</option>
+                    <option value="cream_low_calorie">Cream from Cream or Milk and Oil, Low Calorie, Cholesterol-Free</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" placeholder="Enter quantity" required>
+            </div>
+
+            <div class="form-group">
+                <label for="measurement">Measurement Unit:</label>
+                <select id="measurement" required>
+                    <option value="">--Select--</option>
+                    <option value="grams">Grams</option>
+                </select>
+            </div>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        <div id="results" class="hidden">
+            <h2>Nutrition Information</h2>
+            <p><strong>Food Item:</strong> <span id="result-food-item"></span></p>
+            <p><strong>Quantity:</strong> <span id="result-quantity"></span></p>
+            <p><strong>Fat:</strong> <span id="result-fat"></span> grams</p>
+            <p><strong>Protein:</strong> <span id="result-protein"></span> grams</p>
+            <p><strong>Calories:</strong> <span id="result-calories"></span> kcal</p>
+            <canvas id="nutrition-chart" width="350" height="350"></canvas>
+        </div>
+    </div>
+    <script src="fats_and_oils.js"></script>
+</body>
+
+</html>

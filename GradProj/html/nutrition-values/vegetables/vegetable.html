@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie and Nutritional Value Calculator - Vegetables</title>
+    <link rel="stylesheet" href="../../assets/css/calc-NVPages-style/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/logo/Find_a_Recipe.png">
+
+
+    <style>
+        body {
+            background-image: url("../../assets/images/Calc-NVPages/vegetable/vegetables.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <span style="width: 100px; left: 0; top: 0; position: fixed; margin:20px; "> <a
+                href="../../calculate.html"><button
+                    style=" background-color: rgb(81, 203, 13);">Back</button></a></span>
+        <h1>Calorie and Nutritional Value Calculator - Vegetables</h1>
+        <form id="nutrition-form">
+            <div class="form-group">
+                <label for="food-item">Select Food Item:</label>
+                <select id="food-item" required>
+                    <option value="">-- Select --</option>
+                    <option value="cilantro_leaves_raw">Cilantro leaves, raw</option>
+                    <option value="sweet_potato_frozen_cooked_baked_without_salt">Sweet potato, frozen, cooked, baked,
+                        without salt</option>
+                    <option value="sweet_potato_frozen_cooked_baked_with_salt">Sweet potato, frozen, cooked, baked, with
+                        salt</option>
+                    <option value="sweet_potato_cooked_baked_in_skin_with_salt">Sweet potato, cooked, baked in skin,
+                        with salt</option>
+                    <option value="sweet_potato_cooked_boiled_without_salt">Sweet potato, cooked, boiled, without salt
+                    </option>
+                    <option value="sweet_potato_raw_unprepared">Sweet potato, raw, unprepared</option>
+                    <option value="lettuce_common">Lettuce, common</option>
+                    <option value="lettuce_green_leaf">Lettuce, green leaf</option>
+                    <option value="garden_cress_cooked_boiled_drained_without_salt">Garden cress, cooked, boiled,
+                        drained, without salt</option>
+                    <option value="spinach_frozen_chopped_or_leaf_cooked_boiled_with_salt">Spinach, frozen, chopped or
+                        leaf, cooked, boiled, with salt</option>
+                    <option value="spinach_raw">Spinach, raw</option>
+                    <option value="fiddlehead_fern_cooked_without_salt">Fiddlehead fern, cooked, without salt</option>
+                    <option value="tomato_red_ripe_raw">Tomato, red, ripe, raw</option>
+                    <option value="tomato_green_raw">Tomato, green, raw</option>
+                    <option value="snap_beans_green_cooked_boiled_drained_without_salt">Snap beans, green, cooked,
+                        boiled, drained, without salt</option>
+                    <option value="snap_beans_green_frozen_cooked_boiled_drained_with_salt">Snap beans, green, frozen,
+                        cooked, boiled, drained, with salt</option>
+                    <option value="snap_beans_green_canned_no_salt_added_drained_solids">Snap beans, green, canned, no
+                        salt added, drained solids</option>
+                    <option value="snap_beans_green_raw">Snap beans, green, raw</option>
+                    <option value="winter_squash_raw">Winter squash, raw</option>
+                    <option value="squash_raw">Squash, raw</option>
+                    <option value="squash_blossoms_cooked_boiled_drained_with_salt">Squash blossoms, cooked, boiled,
+                        drained, with salt</option>
+                    <option value="zucchini_small_raw">Zucchini, small, raw</option>
+                    <option value="eggplant_pickled">Eggplant, pickled</option>
+                    <option value="eggplant_cooked_boiled_drained_without_salt">Eggplant, cooked, boiled, drained,
+                        without salt</option>
+                    <option value="eggplant_raw">Eggplant, raw</option>
+                    <option value="peas_and_onions_frozen_cooked_boiled_drained_without_salt">Peas and onions, frozen,
+                        cooked, boiled, drained, without salt</option>
+                    <option value="peas_and_onions_frozen_cooked_boiled_drained_with_salt">Peas and onions, frozen,
+                        cooked, boiled, drained, with salt</option>
+                    <option value="peas_and_carrots_frozen_cooked_boiled_drained_with_salt">Peas and carrots, frozen,
+                        cooked, boiled, drained, with salt</option>
+                    <option value="peas_mature_seeds_sprouted_cooked_boiled_drained_without_salt">Peas, mature seeds,
+                        sprouted, cooked, boiled, drained, without salt</option>
+                    <option value="peas_green_frozen_unprepared">Peas, green, frozen, unprepared</option>
+                    <option value="peas_green_frozen_cooked_boiled_drained_without_salt">Peas, green, frozen, cooked,
+                        boiled, drained, without salt</option>
+                    <option value="peas_green_cooked_boiled_drained_without_salt">Peas, green, cooked, boiled, drained,
+                        without salt</option>
+                    <option value="peas_green_cooked_boiled_drained_with_salt">Peas, green, cooked, boiled, drained,
+                        with salt</option>
+                    <option value="peas_green_canned_regular_pack_solids_and_liquids">Peas, green, canned, regular pack,
+                        solids and liquids</option>
+                    <option value="okra_frozen_cooked_boiled_drained_without_salt">Okra, frozen, cooked, boiled,
+                        drained, without salt</option>
+                    <option value="okra_cooked_boiled_drained_without_salt">Okra, cooked, boiled, drained, without salt
+                    </option>
+                    <option value="okra_raw">Okra, raw</option>
+                    <option value="potato_pancakes">Potato pancakes</option>
+                    <option value="radish_seeds_sprouted_raw">Radish seeds, sprouted, raw</option>
+                    <option value="broccoli_stalks_raw">Broccoli, stalks, raw</option>
+                    <option value="broccoli_frozen_stalks_cooked_boiled_drained_without_salt">Broccoli, frozen, stalks,
+                        cooked, boiled, drained, without salt</option>
+                    <option value="broccoli_frozen_chopped_cooked_boiled_drained_with_salt">Broccoli, frozen, chopped,
+                        cooked, boiled, drained, with salt</option>
+                    <option value="broccoli_cooked_boiled_drained_without_salt">Broccoli, cooked, boiled, drained,
+                        without salt</option>
+                    <option value="broccoli_raw">Broccoli, raw</option>
+                    <option value="onion_sweet_raw">Onion, sweet, raw</option>
+                    <option value="onion_raw">Onion, raw</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" step="0.01" placeholder="Enter quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="measurement"> Measurement Unit:</label>
+                <select id="measurement" required>
+                    <option value="">--Select--</option>
+                    <option value="grams">Grams</option>
+                </select>
+            </div>
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="results" class="hidden">
+            <h2>Results:</h2>
+            <p>Food Item: <span id="result-food-item"></span></p>
+            <p>Quantity: <span id="result-quantity"></span></p>
+            <p>Fat: <span id="result-fat"></span> grams</p>
+            <p>Protein: <span id="result-protein"></span> grams</p>
+            <p>Energy: <span id="result-energy"></span> kcal</p>
+            <canvas id="nutrition-chart"></canvas>
+        </div>
+    </div>
+    <script src="vegetable.js"></script>
+</body>
+
+</html>

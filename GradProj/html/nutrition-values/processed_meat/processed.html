@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie and Nutritional Value Calculator - Processed Meat</title>
+    <link rel="stylesheet" href="../../assets/css/calc-NVPages-style/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/logo/Find_a_Recipe.png">
+
+    <style>
+        body {
+            background-image: url("../../assets/images/Calc-NVPages/processed/processed-meats.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <span style="width: 100px; left: 0; top: 0; position: fixed; margin:20px;">
+            <a href="../../calculate.html"><button style="background-color: rgb(81, 203, 13);">Back</button></a>
+        </span>
+        <h1>Calorie and Nutritional Value Calculator - Processed Meat</h1>
+        <form id="nutrition-form">
+            <div class="form-group">
+                <label for="food-item">Select Food Item:</label>
+                <select id="food-item" required>
+                    <option value="">--Select--</option>
+                    <option value="salami_pastrami_sausage_turkey">Salami Pastrami Sausage, cooked, turkey</option>
+                    <option value="salami_pastrami_sausage_beef">Salami Pastrami Sausage, cooked, beef</option>
+                    <option value="pastrami_turkey_breast">Pastrami, turkey breast</option>
+                    <option value="pastrami_turkey_thigh">Pastrami, turkey thigh, with processed turkey thigh meat</option>
+                    <option value="pastrami_turkey">Pastrami, turkey</option>
+                    <option value="pastrami_beef_fat_free">Pastrami, beef, 98% fat-free</option>
+                    <option value="turkey_sausage_low_fat">Turkey sausage, low-fat, ready-to-eat</option>
+                    <option value="lebanese_bologna_sausage_beef">Lebanese Bologna Sausage, beef</option>
+                    <option value="blood_sausage">Blood Sausage</option>
+                    <option value="bologna_sausage_beef">Bologna Sausage, beef</option>
+                    <option value="beef_sausage_cooked">Beef sausage, cooked</option>
+                    <option value="italian_sausage_sweet">Sausage, Italian, sweet, links</option>
+                    <option value="italian_sausage_turkey_smoked">Sausage, Italian, turkey, smoked</option>
+                    <option value="polish_sausage_beef_chicken_hot">Sausage, Polish, beef with chicken, hot</option>
+                    <option value="turkey_breakfast_sausage_links">Sausage, turkey, breakfast sausage links, light</option>
+                    <option value="processed_beef_slices">Beef, processed (with methods and preservatives), thin slices</option>
+                    <option value="processed_beef_dried">Beef, processed (with methods and preservatives), dried</option>
+                    <option value="processed_beef_sausage_smoked">Beef, processed (with methods and preservatives), sausage, cooked, smoked</option>
+                    <option value="chicken_rolls_low_fat">Chicken rolls, low-fat meat</option>
+                    <option value="turkey_rolls_light">Turkey rolls, light meat</option>
+                    <option value="turkey_rolls_light_dark">Turkey rolls, light and dark meat</option>
+                    <option value="pate_truffle_flavored">Pate, truffle-flavored</option>
+                    <option value="pate_goose_liver_smoked">Pate, goose liver, smoked, canned</option>
+                    <option value="pate_chicken_liver">Pate, chicken liver, canned</option>
+                    <option value="poultry_salad_spread">Poultry salad sandwich spread</option>
+                    <option value="german_bratwurst_chicken">German Bratwurst Sausage, chicken, cooked</option>
+                    <option value="german_bratwurst_veal">German Bratwurst Sausage, veal, cooked</option>
+                    <option value="frankfurter_chicken">Frankfurter Sausage, chicken</option>
+                    <option value="frankfurter_turkey">Frankfurter Sausage, turkey</option>
+                    <option value="frankfurter_beef">Frankfurter Sausage, beef</option>
+                    <option value="frankfurter_beef_hot">Frankfurter Sausage, beef, hot</option>
+                    <option value="frankfurter_beef_low_fat">Frankfurter Sausage, beef, low-fat</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity"> Quantity:</label>
+                <input type="number" id="quantity" step="0.01" placeholder="Enter quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="measurement"> Measurement Unit:</label>
+                <select id="measurement" required>
+                    <option value="">--Select--</option>
+                    <option value="grams">Grams</option>
+                </select>
+            </div>
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="results" class="hidden">
+            <h2>Results:</h2>
+            <p>Food Item: <span id="result-food-item"></span></p>
+            <p>Quantity: <span id="result-quantity"></span></p>
+            <p>Fat: <span id="result-fat"></span> grams</p>
+            <p>Protein: <span id="result-protein"></span> grams</p>
+            <p>Calories: <span id="result-calories"></span> kcal</p>
+            <canvas id="nutrition-chart"></canvas>
+        </div>
+    </div>
+    <script src="processed.js"></script>
+</body>
+
+</html>

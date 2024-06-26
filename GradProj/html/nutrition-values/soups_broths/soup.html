@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie and Nutritional Value Calculator - Processed meat </title>
+    <link rel="stylesheet" href="../../assets/css/calc-NVPages-style/styles.css">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/logo/Find_a_Recipe.png">
+
+    <style>
+        body {
+            background-image: url("../../assets/images/Calc-NVPages/soup/soup-edited.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>Nutrition Calculator</h1>
+        <form id="nutrition-form">
+            <div class="form-group">
+                <label for="food-item">Food Item:</label>
+                <select id="food-item" required>
+                    <option value="">Select a food item</option>
+                    <option value="onion_soup_dry_mix">Onion Soup, Dry Mix</option>
+                    <option value="onion_soup_canned_concentrated">Onion Soup, Canned, Condensed</option>
+                    <option value="cheese_soup_canned_milk">Cheese Soup, Canned, Prepared with Milk</option>
+                    <option value="crab_soup_canned_ready">Crab Soup, Canned, Ready to Serve</option>
+                    <option value="tomato_beef_noodle_soup_canned_concentrated">Tomato Beef Noodle Soup, Canned,
+                        Condensed</option>
+                    <option value="mushroom_soup_dry_mix_water">Mushroom Soup, Dry Mix, Prepared with Water</option>
+                    <option value="mushroom_beef_soup_canned_concentrated">Mushroom Beef Soup, Canned, Condensed
+                    </option>
+                    <option value="green_pea_soup_canned_concentrated">Green Pea Soup, Canned, Condensed</option>
+                    <option value="turkey_noodle_soup_canned_concentrated">Turkey Noodle Soup, Canned, Condensed
+                    </option>
+                    <option value="cream_vegetable_soup_dry_powdered">Cream of Vegetable Soup, Dry, Powdered</option>
+                    <option value="cheese_soup_canned_concentrated">Cheese Soup, Canned, Condensed</option>
+                    <option value="chicken_rice_soup_dry_mix_water">Chicken Rice Soup, Dry Mix, Prepared with Water
+                    </option>
+                    <option value="chicken_rice_soup_canned_thick_ready">Chicken Rice Soup, Canned, Thick, Ready to
+                        Serve</option>
+                    <option value="chicken_vegetable_soup_thick_canned_ready">Chicken Vegetable Soup, Thick, Canned,
+                        Ready to Serve</option>
+                    <option value="chicken_vegetable_soup_canned_concentrated">Chicken Vegetable Soup, Canned, Condensed
+                    </option>
+                    <option value="chicken_mushroom_soup_canned_concentrated">Chicken Mushroom Soup, Canned, Condensed
+                    </option>
+                    <option value="chicken_noodle_soup_dry_mix">Chicken Noodle Soup, Dry Mix</option>
+                    <option value="chicken_soup_canned_thick_ready">Chicken Soup, Thick, Canned, Ready to Serve</option>
+                    <option value="tomato_rice_soup_canned_concentrated">Tomato Rice Soup, Canned, Condensed</option>
+                    <option value="tomato_vegetable_soup_dry_mix">Tomato Vegetable Soup, Dry Mix</option>
+                    <option value="tomato_soup_low_sodium_water">Tomato Soup, Low Sodium, Prepared with Water</option>
+                    <option value="tomato_soup_canned_concentrated">Tomato Soup, Canned, Condensed</option>
+                    <option value="black_bean_soup_canned_concentrated">Black Bean Soup, Canned, Condensed</option>
+                    <option value="bean_soup_frankfurter_sausage_canned_concentrated">Bean Soup with Frankfurter
+                        Sausage, Canned, Condensed</option>
+                    <option value="clam_chowder_soup_canned_concentrated">Clam Chowder Soup, Canned, Condensed</option>
+                    <option value="thick_chicken_noodle_soup_canned_ready">Thick Chicken Noodle Soup, Canned, Ready to
+                        Serve</option>
+                    <option value="thick_vegetable_soup_canned_ready">Thick Vegetable Soup, Canned, Ready to Serve
+                    </option>
+                    <option value="vegetarian_vegetable_soup_canned_concentrated">Vegetarian Vegetable Soup, Canned,
+                        Condensed</option>
+                    <option value="vegetable_beef_soup_canned_concentrated">Vegetable Beef Soup, Canned, Condensed
+                    </option>
+                    <option value="vegetable_soup_canned_low_sodium_concentrated">Vegetable Soup, Canned, Low Sodium,
+                        Condensed</option>
+                    <option value="shark_fin_soup_restaurant">Shark Fin Soup, Restaurant</option>
+                    <option value="cream_onion_soup_canned_concentrated">Cream of Onion Soup, Canned, Condensed</option>
+                    <option value="cream_potato_soup_canned_concentrated">Cream of Potato Soup, Canned, Condensed
+                    </option>
+                    <option value="cream_shrimp_soup_canned_concentrated">Cream of Shrimp Soup, Canned, Condensed
+                    </option>
+                    <option value="cream_chicken_soup_dry_mix_water">Cream of Chicken Soup, Dry Mix, Prepared with Water
+                    </option>
+                    <option value="cream_mushroom_soup_low_sodium_canned">Cream of Mushroom Soup, Low Sodium, Canned,
+                        Condensed</option>
+                    <option value="cream_mushroom_soup_canned_concentrated">Cream of Mushroom Soup, Canned, Condensed
+                    </option>
+                    <option value="cream_asparagus_soup_canned_concentrated">Cream of Asparagus Soup, Canned, Condensed
+                    </option>
+                    <option value="chicken_broth_dry">Chicken Broth, Dry</option>
+                    <option value="chicken_broth_dry_water">Chicken Broth, Dry, Prepared with Water</option>
+                    <option value="chicken_broth_canned_ready">Chicken Broth, Canned, Ready to Serve</option>
+                    <option value="chicken_broth_canned_concentrated">Chicken Broth, Canned, Condensed</option>
+                    <option value="beef_broth_cubes_dry">Beef Broth, Cubes, Dry</option>
+                    <option value="fish_broth_homemade">Fish Broth, Homemade</option>
+                    <option value="chicken_broth_cubes_dry">Chicken Broth, Cubes, Dry</option>
+                    <option value="chicken_vegetable_soup_thick_low_fat_sodium">Chicken Vegetable Soup, Thick, Low Fat,
+                        Low Sodium</option>
+                    <option value="cheese_sauce_ready">Cheese Sauce, Ready to Serve</option>
+                    <option value="plum_sauce_ready">Plum Sauce, Ready to Serve</option>
+                    <option value="pizza_sauce_canned_ready">Pizza Sauce, Canned, Ready to Serve</option>
+                    <option value="teriyaki_sauce_ready">Teriyaki Sauce, Ready to Serve</option>
+                    <option value="teriyaki_sauce_ready_low_sodium">Teriyaki Sauce, Ready to Serve, Low Sodium</option>
+                    <option value="pepper_sauce_ready">Pepper Sauce, Ready to Serve</option>
+                    <option value="fish_sauce_ready">Fish Sauce, Ready to Serve</option>
+                    <option value="barbecue_sauce">Barbecue Sauce</option>
+                    <option value="soy_vinegar_spicy_sauce">Soy and Vinegar Spicy Sauce</option>
+                    <option value="sauce_ready">Sauce, Ready to Serve</option>
+                    <option value="oyster_sauce_ready">Oyster Sauce, Ready to Serve</option>
+                    <option value="pasta_sauce_spaghetti_marinara_ready">Pasta Sauce, Spaghetti/Marinara, Ready to Serve
+                    </option>
+                    <option value="hoisin_sauce_ready">Hoisin Sauce, Ready to Serve</option>
+                    <option value="broth_au_jus_dry">Broth, Au Jus, Dry</option>
+                    <option value="onion_broth_dry_mix">Onion Broth, Dry Mix</option>
+                    <option value="brown_broth_dry">Brown Broth, Dry</option>
+                    <option value="chicken_broth_dry">Chicken Broth, Dry</option>
+                    <option value="chicken_broth_canned_ready">Chicken Broth, Canned, Ready to Serve</option>
+                    <option value="turkey_broth_canned_ready">Turkey Broth, Canned, Ready to Serve</option>
+                    <option value="vegetable_broth_canned_ready">Vegetable Broth, Canned, Ready to Serve</option>
+                    <option value="vegetable_broth_canned_ready_no_salt">Vegetable Broth, Canned, Ready to Serve, No
+                        Salt</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="measurement">Measurement:</label>
+                <select id="measurement" required>
+                    <option value="grams">Grams</option>
+                </select>
+            </div>
+            <button type="submit">Calculate Nutrition</button>
+        </form>
+        <div id="results" class="hidden">
+            <h2>Nutrition Facts</h2>
+            <p id="calories"></p>
+            <p id="fat"></p>
+            <p id="protein"></p>
+            <p id="energy"></p>
+            <canvas id="nutritionChart"></canvas>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="soup.js"></script>
+</body>
+
+</html>

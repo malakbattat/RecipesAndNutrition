@@ -1,0 +1,101 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #a5d6a7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.calculator {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #388e3c;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    color: #2e7d32;
+}
+
+input {
+    padding: 10px;
+    border: 1px solid #81c784;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #388e3c;
+}
+
+.result, .advice {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #125516;
+    font-weight: bold;
+}
+
+.note {
+    flex: 1 1 200px;
+    background-color: #c8e6c9;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.note ul {
+    list-style-type: none;
+    padding: 0;
+    color: #031e1c;
+}
+
+.note li {
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.backbtn{
+    top:0;
+    left: 0;
+    position: fixed;
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 100px;
+    font-size: larger;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}
+

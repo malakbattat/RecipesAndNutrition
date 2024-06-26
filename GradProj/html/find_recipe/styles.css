@@ -1,0 +1,121 @@
+@import url(header.css);
+
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    background-image: url('../assets/images/pattern.jpg');
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  label {
+    font-weight: bold;
+    color: #555;
+  }
+
+  input,
+  select,
+  button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #218838;
+  }
+
+  #results {
+    margin-top: 20px;
+  }
+
+  .recipe {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #fafafa;
+  }
+
+  .recipe img {
+    width: 100px;
+    height: 100px;
+    border-radius: 4px;
+  }
+
+  .recipe h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+  }
+
+  .recipe p {
+    margin: 5px 0;
+    color: #666;
+  }
+
+  .recipe .details {
+    flex-grow: 1;
+  }
+
+
+
+  /* new css for ingredient name */
+  .ingredient-name {
+    cursor: pointer;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #dedede;
+    display: inline-block;
+    border-radius: 3px;
+  }
+
+  .ingredient-bg {
+    background-color: #affdd6;
+    border: 1px solid #20d336;
+  }
+
+  #alerts {
+    color: #d32c2c;
+  }
+
+
+  /* ingredient display */
+/*     #ingredients {
+      display: none; 
+  } 
+      */

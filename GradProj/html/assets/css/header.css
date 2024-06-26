@@ -1,0 +1,27 @@
+/*header {
+    width: 100%;
+    position: fixed;
+    height: 80px;
+    left: 0;
+    top: 0;
+    margin: 0;
+    background-color: rgba(123, 193, 19, 0.8);
+}
+
+img {
+    width: 6%;
+}
+
+#btn1 {
+    margin-right: 4px;
+    margin-left: 4px;
+    border-radius: 4px;
+    background-color: #157e3a;
+    font-size: 100%;
+}
+
+#btn1 .active {
+    background-color: #7BC113;
+}
+*/
+

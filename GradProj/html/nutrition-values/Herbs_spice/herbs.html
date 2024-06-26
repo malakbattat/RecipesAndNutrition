@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie and Nutritional Value Calculator - Spices and Herbs</title>
+    <link rel="stylesheet" href="../../assets/css/calc-NVPages-style/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/logo/Find_a_Recipe.png">
+
+    <style>
+        body {
+            background-image: url("../../assets/images/Calc-NVPages/herbs/Herbs-and-Spices1.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span style="width: 100px; left: 0; top: 0; position: fixed; margin:20px; ">
+            <a href="../../calculate.html"><button style="background-color: rgb(81, 203, 13);">Back</button></a>
+        </span>
+        <h1>Calorie and Nutritional Value Calculator - Spices and Herbs</h1>
+        <form id="nutrition-form">
+            <div class="form-group">
+                <label for="food-item">Select Food Item:</label>
+                <select id="food-item" required>
+                    <option value="">--Select--</option>
+                    <option value="pickled_capers">Pickled capers, canned</option>
+                    <option value="spices_oregano_dried">Spices, oregano, dried</option>
+                    <option value="spices_paprika">Spices, paprika</option>
+                    <option value="spices_cardamom">Spices, cardamom</option>
+                    <option value="spices_fenugreek_seeds">Spices, fenugreek seeds</option>
+                    <option value="spices_anise_seeds">Spices, anise seeds</option>
+                    <option value="spices_parsley_dried">Spices, parsley, dried</option>
+                    <option value="spices_ground">Spices, ground</option>
+                    <option value="spices_poultry_seasoning">Spices, poultry seasoning</option>
+                    <option value="spices_rosemary_dried">Spices, rosemary, dried</option>
+                    <option value="spices_basil_dried">Spices, basil, dried</option>
+                    <option value="spices_thyme_dried">Spices, thyme, dried</option>
+                    <option value="spices_saffron">Spices, saffron</option>
+                    <option value="spices_ginger_ground">Spices, ginger, ground</option>
+                    <option value="spices_cervil_dried">Spices, cervil, dried</option>
+                    <option value="spices_tarragon_dried">Spices, tarragon, dried</option>
+                    <option value="spices_ground_hot_pepper">Spices, ground hot pepper</option>
+                    <option value="spices_pepper_white">Spices, pepper, white</option>
+                    <option value="spices_pepper_black">Spices, pepper, black</option>
+                    <option value="spices_cinnamon_ground">Spices, cinnamon, ground</option>
+                    <option value="spices_turmeric_ground">Spices, turmeric, ground</option>
+                    <option value="spices_marjoram_dried">Spices, marjoram, dried</option>
+                    <option value="spices_sage_ground">Spices, sage, ground</option>
+                    <option value="spices_onion_powder">Spices, onion powder</option>
+                    <option value="spices_garlic_powder">Spices, garlic powder</option>
+                    <option value="spices_mustard_powder_ground">Spices, mustard powder, ground</option>
+                    <option value="spices_curry_powder">Spices, curry powder</option>
+                    <option value="spices_bay_leaf">Spices, bay leaf</option>
+                    <option value="spices_coriander_leaf_dried">Spices, coriander leaf, dried</option>
+                    <option value="vinegar_apple_juice">Vinegar, apple juice</option>
+                    <option value="vanilla_extract">Vanilla extract</option>
+                    <option value="rosemary_fresh">Rosemary, fresh</option>
+                    <option value="basil_fresh">Basil, fresh</option>
+                    <option value="thyme_fresh">Thyme, fresh</option>
+                    <option value="food_salt">Food salt</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" placeholder="Enter quantity" required>
+            </div>
+
+            <div class="form-group">
+                <label for="measurement">Measurement Unit:</label>
+                <select id="measurement" required>
+                    <option value="">--Select--</option>
+                    <option value="grams">Grams</option>
+                </select>
+            </div>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        <div id="results" class="hidden">
+            <h2>Results</h2>
+            <p><strong>Food Item:</strong> <span id="result-food-item"></span></p>
+            <p><strong>Quantity:</strong> <span id="result-quantity"></span></p>
+            <p><strong>Fat (g):</strong> <span id="result-fat"></span></p>
+            <p><strong>Protein (g):</strong> <span id="result-protein"></span></p>
+            <p><strong>Calories (kcal):</strong> <span id="result-calories"></span></p>
+            <canvas id="nutrition-chart" width="300" height="300"></canvas>
+        </div>
+    </div>
+    <script src="herbs.js"></script>
+</body>
+
+</html>

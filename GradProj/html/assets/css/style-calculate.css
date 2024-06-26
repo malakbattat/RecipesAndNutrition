@@ -1,0 +1,133 @@
+@import url(header.css);
+
+body {
+    background-image: url("../images/pattern.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    line-height: 1.2;
+    color: #29333f;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+header{
+   display: inline-block;
+}
+
+.container {
+    width: 60%;
+    margin-left: 250px;
+    background-color: #59ac1043;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.diet-hero {
+    text-align: center;
+
+}
+
+.main-section{
+    margin-top: 100px;
+}
+
+.diet-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    width: 70%;
+    margin-left: 120px;
+    font-size: x-large;
+    background-color: rgba(204, 214, 191, 0.514);
+    min-height: 100vh;
+    box-shadow: 5px 10px 18px #888;
+    border-radius: 5px;
+}
+
+.diet-data-list {
+    border-bottom: 1px solid #d1b9b9;
+}
+
+li {
+    padding: 15px;
+}
+
+li:not(:last-child) {
+    border-bottom: 1px solid rgb(92, 89, 89);
+}
+
+li:first-child {
+    margin-top: 1rem;
+}
+
+li:last-child {
+    margin-bottom: 1rem;
+}
+
+::marker {
+    --image: '🥚';
+    content: var(--image);
+}
+
+li:nth-child(2)::marker {
+    --image: '🌿';
+}
+
+li:nth-child(3)::marker {
+    --image: '🌴';
+}
+
+li:nth-child(4)::marker {
+    --image: '🐔';
+}
+
+li:nth-child(5)::marker {
+    --image: '🍲';
+}
+
+li:nth-child(6)::marker {
+    --image: '🍔';
+}
+
+li:nth-child(7)::marker {
+    --image: '🍇';
+}
+
+li:nth-child(8)::marker {
+    --image: '🫑';
+}
+
+li:nth-child(9)::marker {
+    --image: '🧁';
+}
+
+ul {
+    list-style: inside none none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0.1rem;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: green;
+}
+
+li:hover {
+    background-color: rgba(133, 128, 128, 0.248);
+    font-weight: 700;
+}
+
+h2{
+    color: brown;
+}
+

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie and Nutritional Value Calculator - Poultry Products</title>
+    <link rel="stylesheet" href="../../assets/css/calc-NVPages-style/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/logo/Find_a_Recipe.png">
+
+    <style>
+        body {
+            background-image: url("../../assets/images/Calc-NVPages/poultry/meat.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span style="width: 100px; left: 0; top: 0; position: fixed; margin:20px;">
+            <a href="../../calculate.html"><button style="background-color: rgb(81, 203, 13);">Back</button></a>
+        </span>
+        <h1>Calorie and Nutritional Value Calculator - Poultry Products</h1>
+        <form id="nutrition-form">
+            <div class="form-group">
+                <label for="food-item">Select Food Item:</label>
+                <select id="food-item" required>
+                    <option value="">--Select--</option>
+                    <option value="goose_meat_skin_cooked_roasted">Goose, meat and skin, cooked, roasted</option>
+                    <option value="chicken_fried_breaded_flour_egg">Chicken, fried or breaded with flour and egg</option>
+                    <option value="chicken_fried_breaded_flour_egg_milk">Chicken, fried or breaded with flour, egg, and milk</option>
+                    <option value="chicken_breast_meat_skin_fried_flour_mixture">Chicken, breast, meat and skin, fried with flour mixture</option>
+                    <option value="chicken_back_meat_skin_fried_flour_mixture">Chicken, back, meat and skin, fried with flour mixture</option>
+                    <option value="chicken_liver_all_classes_raw">Chicken, liver, all classes, raw</option>
+                    <option value="chicken_breast_meat_skin_fried_flour">Chicken, breast, meat and skin, fried with flour</option>
+                    <option value="chicken_thigh_meat_only_grilled">Chicken, thigh, meat only, grilled</option>
+                    <option value="chicken_thigh_meat_only_fried">Chicken, thigh, meat only, fried</option>
+                    <option value="chicken_thigh_meat_skin_grilled">Chicken, thigh, meat and skin, grilled</option>
+                    <option value="chicken_thigh_meat_skin_cooked">Chicken, thigh, meat and skin, cooked</option>
+                    <option value="chicken_grilled_fried_light_meat_skin_raw">Chicken, grilled or fried, light meat, meat and skin, raw</option>
+                    <option value="chicken_grilled_fried_meat_only_grilled">Chicken, grilled or fried, meat only, grilled</option>
+                    <option value="chicken_grilled_fried_meat_only_cooked_fried">Chicken, grilled or fried, meat only, cooked, fried</option>
+                    <option value="chicken_grilled_fried_meat_skin_giblets_neck_grilled">Chicken, grilled or fried, meat and skin, giblets and neck, grilled</option>
+                    <option value="chicken_grilled_fried_meat_skin_grilled">Chicken, grilled or fried, meat and skin, grilled</option>
+                    <option value="chicken_grilled_fried_meat_skin_cooked_boiled">Chicken, grilled or fried, meat and skin, cooked, boiled</option>
+                    <option value="chicken_grilled_fried_meat_skin_cooked_fried_flour">Chicken, grilled or fried, meat and skin, cooked, fried with flour</option>
+                    <option value="chicken_grilled_giblets_cooked_boiled">Chicken, grilled, giblets, cooked, boiled</option>
+                    <option value="chicken_grilled_meat_only_raw">Chicken, grilled, meat only, raw</option>
+                    <option value="chicken_grilled_low_fat_meat_only_cooked_grilled">Chicken, grilled, low-fat meat, meat only, cooked, grilled</option>
+                    <option value="chicken_grilled_meat_skin_cooked_grilled">Chicken, grilled, meat and skin, cooked, grilled</option>
+                    <option value="chicken_grilled_fried_back_meat_only_cooked_fried">Chicken, grilled or fried, back, meat only, cooked, fried</option>
+                    <option value="chicken_grilled_fried_wing_meat_only_cooked_grilled">Chicken, grilled or fried, wing, meat only, cooked, grilled</option>
+                    <option value="chicken_grilled_fried_wing_meat_only_cooked_fried">Chicken, grilled or fried, wing, meat only, cooked, fried</option>
+                    <option value="chicken_grilled_fried_wing_meat_skin_cooked_boiled">Chicken, grilled or fried, wing, meat and skin, cooked, boiled</option>
+                    <option value="chicken_grilled_fried_separable_fat_raw">Chicken, grilled or fried, separable fat, raw</option>
+                    <option value="chicken_grilled_fried_neck_meat_only_cooked_fried">Chicken, grilled or fried, neck, meat only, cooked, fried</option>
+                    <option value="chicken_grilled_fried_leg_meat_only_cooked_boiled">Chicken, grilled or fried, leg, meat only, cooked, boiled</option>
+                    <option value="chicken_grilled_fried_leg_meat_only_raw">Chicken, grilled or fried, leg, meat only, raw</option>
+                    <option value="chicken_grilled_fried_leg_meat_skin_cooked_boiled">Chicken, grilled or fried, leg, meat and skin, cooked, boiled</option>
+                    <option value="chicken_grilled_fried_leg_meat_skin_cooked_fried_flour_egg_milk">Chicken, grilled or fried, leg, meat and skin, cooked, fried, flour, egg, and milk mixture</option>
+                    <option value="chicken_grilled_fried_breast_meat_only_cooked_grilled">Chicken, grilled or fried, breast, meat only, cooked, grilled</option>
+                    <option value="chicken_grilled_fried_breast_meat_only_cooked_boiled">Chicken, grilled or fried, breast, meat only, cooked, boiled</option>
+                    <option value="chicken_grilled_fried_breast_meat_only_cooked_fried">Chicken, grilled or fried, breast, meat only, cooked, fried</option>
+                    <option value="chicken_grilled_fried_breast_meat_skin_cooked_boiled">Chicken, grilled or fried, breast, meat and skin, cooked, boiled</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" step="0.01" placeholder="Enter quantity" required>
+            </div>
+
+            <div class="form-group">
+                <label for="measurement">Measurement Unit:</label>
+                <select id="measurement" required>
+                    <option value="">--Select--</option>
+                    <option value="grams">Grams</option>
+                </select>
+            </div>
+
+            <button type="submit">Calculate</button>
+        </form>
+
+        <div id="results" class="hidden">
+            <h2>Results for <span id="result-food-item"></span></h2>
+            <p>Quantity: <span id="result-quantity"></span></p>
+            <p>Fat: <span id="result-fat"></span> g</p>
+            <p>Protein: <span id="result-protein"></span> g</p>
+            <p>Calories: <span id="result-calories"></span> kcal</p>
+            <canvas id="nutrition-chart"></canvas>
+        </div>
+    </div>
+    <script src="poultry.js"></script>
+</body>
+
+</html>

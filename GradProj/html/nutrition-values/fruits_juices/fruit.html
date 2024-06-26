@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calorie and Nutritional Value Calculator - Fruits and Juices</title>
+    <link rel="stylesheet" href="../../assets/css/calc-NVPages-style/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/logo/Find_a_Recipe.png">
+
+    <style>
+        body {
+            background-image: url("../../assets/images/Calc-NVPages/fruit/heallthy-juices.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <span style="width: 100px; left: 0; top: 0; position: fixed; margin:20px; ">
+            <a href="../../calculate.html"><button style="background-color: rgb(81, 203, 13);">Back</button></a>
+        </span>
+        <h1>Calorie and Nutritional Value Calculator - Fruits and Juices</h1>
+        <form id="nutrition-form">
+            <div class="form-group">
+                <label for="food-item">Select Food Item:</label>
+                <select id="food-item" required>
+                    <option value="">-- Select --</option>
+                    <option value="pineapple_raw_all_varieties">Pineapple, raw, all varieties</option>
+                    <option value="avocado_fresh_all_commercial_varieties">Avocado, fresh, all commercial varieties</option>
+                    <option value="watermelon">Watermelon</option>
+                    <option value="pomelo_fresh">Pomelo, fresh</option>
+                    <option value="blackberries_fresh">Blackberries, fresh</option>
+                    <option value="cranberries_fresh">Cranberries, fresh</option>
+                    <option value="cranberries_dried_sweetened">Cranberries, dried, sweetened</option>
+                    <option value="blueberries_canned_syrup_concentrate_dried">Blueberries, canned, syrup concentrate, dried</option>
+                    <option value="blueberries_fresh">Blueberries, fresh</option>
+                    <option value="blueberries_canned_light_syrup_dried">Blueberries, canned, light syrup, dried</option>
+                    <option value="blueberries_canned_syrup_concentrate_solids_liquids">Blueberries, canned, syrup concentrate, solids and liquids</option>
+                    <option value="grapes_red_or_green_fresh">Grapes, red or green, fresh</option>
+                    <option value="apricots_dried">Apricots, dried</option>
+                    <option value="apricots_fresh">Apricots, fresh</option>
+                    <option value="apricots_canned_very_light_syrup_peels_solids_liquids">Apricots, canned, very light syrup, with peels, solids and liquids</option>
+                    <option value="banana_fresh">Banana, fresh</option>
+                    <option value="nectarine_fresh">Nectarine, fresh</option>
+                    <option value="orange_navel_fresh">Orange, navel, fresh</option>
+                    <option value="orange_fresh_all_commercial_varieties">Orange, fresh, all commercial varieties</option>
+                    <option value="persimmon_japanese_fresh">Persimmon, Japanese, fresh</option>
+                    <option value="plum_fresh">Plum, fresh</option>
+                    <option value="plum_dried_cooked_sugar_added">Plum, dried, cooked, sugar added</option>
+                    <option value="plum_canned_purple_very_heavy_syrup_solids_liquids">Plum, canned, purple, very heavy syrup, solids and liquids</option>
+                    <option value="plum_canned_purple_heavy_syrup_solids_liquids">Plum, canned, purple, heavy syrup, solids and liquids</option>
+                    <option value="apple_fresh_with_skin">Apple, fresh, with skin</option>
+                    <option value="apple_canned_sweetened_slices_dried_undried">Apple, canned, sweetened, sliced, dried, undried</option>
+                    <option value="tamarind_fresh">Tamarind, fresh</option>
+                    <option value="dates_deglet_noor">Dates, Deglet Noor</option>
+                    <option value="dates_medjool">Dates, Medjool</option>
+                    <option value="raspberries_fresh">Raspberries, fresh</option>
+                    <option value="raspberries_frozen_red_sweetened">Raspberries, frozen, red, sweetened</option>
+                    <option value="raspberries_canned_red_thick_syrup_solids_liquids">Raspberries, canned, red, thick syrup, solids and liquids</option>
+                    <option value="berries_fresh">Berries, fresh</option>
+                    <option value="prickly_pear_raw">Prickly pear, raw</option>
+                    <option value="figs_fresh">Figs, fresh</option>
+                    <option value="figs_dried">Figs, dried</option>
+                    <option value="figs_canned_light_syrup_solids_liquids">Figs, canned, light syrup, solids and liquids</option>
+                    <option value="figs_canned_water_juice_solids_liquids">Figs, canned, water juice, solids and liquids</option>
+                    <option value="grapefruit_fresh_pink_red_all_areas">Grapefruit, fresh, pink and red, all areas</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity"> Quantity:</label>
+                <input type="number" id="quantity" step="0.01" placeholder="Enter quantity" required>
+            </div>
+            <div class="form-group">
+                <label for="measurement"> Measurement Unit:</label>
+                <select id="measurement" required>
+                    <option value="">--Select--</option>
+                    <option value="grams">Grams</option>
+                </select>
+            </div>
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="results" class="hidden">
+            <h2>Results:</h2>
+            <p>Food Item: <span id="result-food-item"></span></p>
+            <p>Quantity: <span id="result-quantity"></span></p>
+            <p>Fat: <span id="result-fat"></span> grams</p>
+            <p>Protein: <span id="result-protein"></span> grams</p>
+            <p>Calories: <span id="result-calories"></span> kcal</p>
+            <canvas id="nutrition-chart"></canvas>
+        </div>
+    </div>
+    <script src="fruit.js"></script>
+</body>
+</html>

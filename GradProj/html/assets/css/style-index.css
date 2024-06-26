@@ -1,0 +1,139 @@
+body {
+    background-image: url("../images/bg41.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+text-align: center;
+padding: 20px;
+background: rgba(0, 128, 0, 0.5);
+/* Semi-transparent green */
+border-bottom: 2px solid #157e3a;
+}
+
+header img {
+width: 100px;
+/* Increased size */
+height: 100px;
+/* Increased size */
+margin-bottom: 10px;
+}
+
+.btn-custom {
+margin: 0 4px;
+border-radius: 4px;
+background-color: #28a745;
+/* Green */
+font-size: 1rem;
+/* Smaller font size */
+color: #ffffff;
+}
+
+.btn-custom.active {
+background-color: #218838;
+/* Darker green */
+}
+
+.btn-custom-different {
+background-color: #ffc107;
+/* Different color (Yellow) */
+font-size: 1rem;
+/* Same smaller font size */
+color: #ffffff;
+}
+
+.intro {
+    font-size: 1.5rem;
+    background-color: rgba(34, 139, 34, 0.8);
+    /* Forest green with transparency */
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    margin: 80px auto;
+    text-align: left;
+}
+
+.intro p {
+    margin: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: rgba(0, 128, 0, 0.5);
+    /* Semi-transparent green */
+    border-top: 2px solid #157e3a;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+main {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    header img {
+        width: 80px;
+        /* Reduced size for smaller screens */
+        height: 80px;
+        /* Reduced size for smaller screens */
+    }
+
+    .btn-custom,
+    .btn-custom-different {
+        font-size: 0.9rem;
+        /* Smaller font size for smaller screens */
+    }
+
+    .intro {
+        font-size: 1.2rem;
+        /* Smaller font size for smaller screens */
+        padding: 15px;
+        /* Reduced padding for smaller screens */
+        margin: 40px auto;
+        /* Reduced margin for smaller screens */
+        max-width: 90%;
+        /* Full width for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    header img {
+        width: 60px;
+        /* Further reduced size for extra small screens */
+        height: 60px;
+        /* Further reduced size for extra small screens */
+    }
+
+    .btn-custom,
+    .btn-custom-different {
+        font-size: 0.8rem;
+        /* Smaller font size for extra small screens */
+        padding: 5px 10px;
+        /* Reduced padding for buttons */
+        margin: 2px;
+        /* Reduced margin for buttons */
+    }
+
+    .intro {
+        font-size: 1rem;
+        /* Smaller font size for extra small screens */
+        padding: 10px;
+        /* Further reduced padding for extra small screens */
+    }
+
+    .header-buttons {
+        flex-direction: column;
+        /* Stack buttons vertically */
+        align-items: center;
+        /* Center align buttons */
+    }
+}

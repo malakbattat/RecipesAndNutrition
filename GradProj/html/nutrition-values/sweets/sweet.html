@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweets Nutrition Calculator</title>
+    <link rel="stylesheet" href="../../assets/css/calc-NVPages-style/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="icon" type="image/x-icon" href="../../assets/images/logo/Find_a_Recipe.png">
+
+
+    <style>
+        body {
+            background-image: url("../../assets/images/Calc-NVPages/sweet/candy.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+
+        }
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        form select,
+        form input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        form button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #28a745;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #218838;
+        }
+
+        #results {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            display: none;
+        }
+
+        #results.hidden {
+            display: none;
+        }
+
+        #results {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #c8e6c9;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #results p {
+            margin: 10px 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #nutrition-chart {
+            max-width: 350px;
+            max-height: 350px;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Sweets Nutrition Calculator</h1>
+    <form id="nutrition-form">
+        <label for="food-item">Select a Sweet Item:</label>
+        <select id="food-item" required>
+            <option value="ice_cream_regular_low_calorie_chocolate">Ice Cream, Regular, Low Calorie, Chocolate</option>
+            <option value="ice_cream_chocolate_light">Ice Cream, Chocolate, Light</option>
+            <option value="ice_cream_chocolate_light_no_sugar">Ice Cream, Chocolate, Light, No Sugar Added</option>
+            <option value="jams_and_preserves">Jams and Preserves</option>
+            <option value="pudding_rice_dry_mix_milk">Pudding, Rice, Dry Mix, Prepared with Whole Milk</option>
+            <option value="pudding_coconut_dry_mix_milk">Pudding, Coconut, Dry Mix, Regular, Prepared with Whole Milk
+            </option>
+            <option value="pudding_chocolate_dry_mix_regular">Pudding, Chocolate, Dry Mix, Regular</option>
+            <option value="pudding_vanilla_ready_to_eat">Pudding, Vanilla, Ready to Eat</option>
+            <option value="pudding_vanilla_dry_mix_regular">Pudding, Vanilla, Dry Mix, Regular</option>
+            <option value="pudding_banana_dry_mix_regular">Pudding, Banana, Dry Mix, Regular</option>
+            <option value="gelatin_low_sugar_nonfat_milk_chocolate">Gelatin, Low Sugar, Nonfat Milk, Chocolate</option>
+            <option value="pie_filling_apple_canned">Pie Filling, Apple, Canned</option>
+            <option value="gelatin_dry_mix">Gelatin, Dry Mix</option>
+            <option value="desserts_apple_crisp_prepared_from_recipe">Desserts, Apple Crisp, Prepared from Recipe
+            </option>
+            <option value="desserts_sugar_candy">Desserts, Sugar Candy</option>
+            <option value="desserts_chocolate_milk">Desserts, Chocolate Milk</option>
+            <option value="desserts_chocolate_milk_with_almonds">Desserts, Chocolate Milk with Almonds</option>
+            <option value="desserts_carob_unsweetened">Desserts, Carob, Unsweetened</option>
+            <option value="desserts_yogurt_chocolate_dry_mix">Desserts, Yogurt, Chocolate, Dry Mix</option>
+            <option value="desserts_chocolate_fondant_covered">Desserts, Chocolate Fondant Covered</option>
+            <option value="desserts_fondant_prepared_from_recipe">Desserts, Fondant, Prepared from Recipe</option>
+            <option value="desserts_hard_diet_or_low_calorie_sorbitol">Desserts, Hard, Diet or Low Calorie (Sorbitol)
+            </option>
+            <option value="desserts_kit_kat_wafers">Desserts, Kit Kat Wafers</option>
+            <option value="desserts_chocolate_caramel_rolls">Desserts, Chocolate Caramel Rolls</option>
+            <option value="desserts_york_peppermint_patties">Desserts, York Peppermint Patties</option>
+            <option value="desserts_caramello_candy_bars">Desserts, Caramello Candy Bars</option>
+            <option value="desserts_mars_milky_way_bars">Desserts, Mars Milky Way Bars</option>
+            <option value="desserts_m_and_m_chocolate_candies">Desserts, M&M Chocolate Candies</option>
+            <option value="desserts_marshmallows">Desserts, Marshmallows</option>
+            <option value="desserts_chocolate_covered_caramel_with_nuts">Desserts, Chocolate Covered Caramel with Nuts
+            </option>
+            <option value="desserts_chocolate_mousse_prepared_from_recipe">Desserts, Chocolate Mousse, Prepared from
+                Recipe</option>
+            <option value="molasses">Molasses</option>
+            <option value="fruit_butter_apple">Fruit Butter, Apple</option>
+            <option value="sugar_turbinado">Sugar, Turbinado</option>
+            <option value="syrup_corn_high_fructose">Syrup, Corn, High Fructose</option>
+            <option value="syrup_sorghum">Syrup, Sorghum</option>
+            <option value="syrup_blend_corn_and_sugar">Syrup, Blend, Corn and Sugar</option>
+            <option value="baking_chocolate_unsweetened_squares">Baking Chocolate, Unsweetened, Squares</option>
+            <option value="custard_egg_dry_mix">Custard, Egg, Dry Mix</option>
+            <option value="cocoa_dry_powder_unsweetened">Cocoa, Dry Powder, Unsweetened</option>
+            <option value="cocoa_dry_powder_unsweetened_alkalized">Cocoa, Dry Powder, Unsweetened, Alkalized</option>
+            <option value="frozen_yogurt_chocolate_soft_serve">Frozen Yogurt, Chocolate, Soft Serve</option>
+            <option value="frozen_yogurt_non_chocolate_flavors">Frozen Yogurt, Non-Chocolate Flavors</option>
+            <option value="candy_bar_chocolate_and_peanut">Candy Bar, Chocolate and Peanut</option>
+            <option value="italian_ice_restaurant_prepared">Italian Ice, Restaurant Prepared</option>
+            <option value="italian_ice_lemon">Italian Ice, Lemon</option>
+            <option value="frozen_juice_bar_low_calorie_sweetened">Frozen Juice Bar, Low Calorie, Sweetened</option>
+            <option value="frozen_juice_bar_fruit_no_sugar_added">Frozen Juice Bar, Fruit, No Sugar Added</option>
+            <option value="klondike_slim_ice_cream_sandwich">Klondike Slim Ice Cream Sandwich</option>
+            <option value="diet_jams_and_preserves_any_flavor">Diet Jams and Preserves, Any Flavor</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" min="0" step="0.01" required>
+
+        <label for="measurement">Measurement:</label>
+        <select id="measurement" required>
+            <option value="grams">Grams</option>
+        </select>
+
+        <button type="submit">Calculate Nutrition</button>
+    </form>
+
+    <div id="results" class="hidden">
+        <h2>Nutrition Facts</h2>
+        <p><strong>Food Item:</strong> <span id="result-food-item"></span></p>
+        <p><strong>Quantity:</strong> <span id="result-quantity"></span></p>
+        <p><strong>Fat:</strong> <span id="result-fat"></span> g</p>
+        <p><strong>Protein:</strong> <span id="result-protein"></span> g</p>
+        <p><strong>Energy:</strong> <span id="result-energy"></span> kcal</p>
+        <canvas id="nutrition-chart" width="400" height="400"></canvas>
+    </div>
+
+    <script src="sweet.js"></script>
+</body>
+
+</html>
